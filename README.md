@@ -24,6 +24,7 @@ python3 voc.py # 在data/中获取train_annotation.txt和test_annotation.txt
 
 ### 3、下载权重文件
 * Darknet预训练权重:  [darknet53-448.weights](https://pjreddie.com/media/files/darknet53_448.weights) 
+* 本实验当中已训练好的权重：[best.pt](https://pan.baidu.com/s/1XD-8ETwWJfXviyP4Fid3xg )（提取码：br8a）
 
 在YOLOV3文件夹中创建`weight/`文件夹，并将下载好的权重文件放入其中.
 
