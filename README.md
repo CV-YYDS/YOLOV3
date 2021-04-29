@@ -59,7 +59,5 @@ CUDA_VISIBLE_DEVICES=0 python3 test.py --weight_path $WEIGHT_PATH --gpu_id 0 --v
 
 ---
 ## 参考
-
-* tensorflow : https://github.com/Stinky-Tofu/Stronger-yolo
 * pytorch : https://github.com/ultralytics/yolov3
-* keras : https://github.com/qqwweee/keras-yolo3
+
