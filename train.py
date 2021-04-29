@@ -18,9 +18,6 @@ from utils import cosine_lr_scheduler
 
 
 
-# import os
-# os.environ["CUDA_VISIBLE_DEVICES"]='2'
-
 
 class Trainer(object):
     def __init__(self,  weight_path, resume, gpu_id):
@@ -52,7 +49,7 @@ class Trainer(object):
         #                                                  T_max=self.epochs*len(self.train_dataloader),
         #                                                  lr_init=cfg.TRAIN["LR_INIT"],
         #                                                  lr_min=cfg.TRAIN["LR_END"],
-        #                                                  warmup=cfg.TRAIN["WARMUP_EPOCHS"]*len(self.train_dataloader)) #学习率衰减
+        #                                                  warmup=cfg.TRAIN["WARMUP_EPOCHS"]*len(self.train_dataloader)) #余弦变化的学习率
 
         self.scheduler = lr_scheduler.StepLR(self.optimizer, 7,gamma=0.1, last_epoch=-1)  # 等间隔调整学习率，调整倍数为gamma倍，调整间隔为step_size，间隔单位是step，需要注意的是，step通常是指epoch
 
@@ -94,7 +91,7 @@ class Trainer(object):
     def train(self):
         print(self.yolov3)
         print("Train datasets number is : {}".format(len(self.train_dataset)))
-        f0 = open("/home/lbc/jujinhao/YOLOV3-master/data/loss_iteration.txt", "w")
+        f0 = open("/home/lbc/jujinhao/YOLOV3-master/data/loss_iteration.txt", "w")#将结果进行输出保留
         f1 = open("/home/lbc/jujinhao/YOLOV3-master/data/loss_epoch.txt", "w")
 
         for epoch in range(self.start_epoch, self.epochs):
