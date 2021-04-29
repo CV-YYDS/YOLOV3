@@ -7,6 +7,11 @@
 git clone https://github.com/Peterisfar/YOLOV3.git
 ```
 更新yolov3_config_voc.py中的`"PROJECT_PATH"`.
+```Bash
+＃安装软件包
+pip3 install -r requirements.txt --user
+```
+
 ### 2、下载数据集
 * 下载Pascal VOC数据集: [VOC 2012_trainval](http://host.robots.ox.ac.uk/pascal/VOC/voc2012/VOCtrainval_11-May-2012.tar) 、[VOC 2007_trainval](http://host.robots.ox.ac.uk/pascal/VOC/voc2007/VOCtrainval_06-Nov-2007.tar)、[VOC2007_test](http://host.robots.ox.ac.uk/pascal/VOC/voc2007/VOCtest_06-Nov-2007.tar).将它们全部放入data文件夹中，并且更新yolov3_config_voc.py中的`"DATA_PATH"`.
 * 转换数据格式，将Pascal VOC * .xml格式转换为自定义格式(Image_path0 &nbsp; xmin0,ymin0,xmax0,ymax0,class0 &nbsp; xmin1,ymin1...)
@@ -53,7 +58,7 @@ CUDA_VISIBLE_DEVICES=0 python3 test.py --weight_path $WEIGHT_PATH --gpu_id 0 --v
 
 
 ---
-## Reference
+## 参考
 
 * tensorflow : https://github.com/Stinky-Tofu/Stronger-yolo
 * pytorch : https://github.com/ultralytics/yolov3
